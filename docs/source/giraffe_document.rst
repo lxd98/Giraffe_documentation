@@ -1,6 +1,5 @@
-Overview
+|image1| Overview
 ========
-|image1|
 
 **Giraffe** is specially designed to provide a comprehensive assessment
 of the accuracy of long-read sequencing datasets obtained from both the
@@ -964,5 +963,5 @@ the ``input`` is the results from the **Giraffe**; the ``x_min`` and
 
 
 .. |image1| image:: ../figures/giraffe_logo.png
-   :width: 200px
+   :width: 80px
 .. |image2| image:: ../figures/workflow.png

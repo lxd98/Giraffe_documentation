@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'Giraffe'
-copyright = '2024, Xudong liu'
+copyright = '2024, Xudong Liu'
 author = 'Xudong'
 
 release = '0.1'

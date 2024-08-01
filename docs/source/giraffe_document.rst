@@ -964,4 +964,5 @@ the ``input`` is the results from the **Giraffe**; the ``x_min`` and
 
 
 .. |image1| image:: ../figures/giraffe_logo.png
+   :width: 200px
 .. |image2| image:: ../figures/workflow.png

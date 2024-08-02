@@ -874,7 +874,7 @@ modBAM processing
 
 Here, we provide the user with command(s) to profile their methylation
 from the modBAM with
-`modkit <https://github.com/nanoporetech/modkit>`__.
+`modkit <https://github.com/nanoporetech/modkit>`__ for the ONT sequencing platform. For the PacBio users, please refer to the `ccsmeth <https://github.com/PengNi/ccsmeth>`__ (Quick-start and Usage parts).
 
 .. code:: shell
 
@@ -884,6 +884,11 @@ from the modBAM with
    # for CpG 5hmC
    modkit pileup human_5mC_5hmC.bam human_5mC_5hmC.bed --cpg --ref human.fa -t 10 
    cat human_5mC_5hmC.bed | awk '{if $4 == "h" print $0}' > human_5hmC.bed
+
+   # get the input methylation file to Giraffe
+   # $1, $2, $3, and $4 present chromosome, start, end, and methylation proportion, respectively.
+   awk '{$1 "\t" $2 "\t" $3 "\t" $11}' human_5hmC.bed > human_5hmC_giraffe.bed
+
 
 homopolymer statics
 -------------------

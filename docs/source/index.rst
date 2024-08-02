@@ -201,7 +201,7 @@ Detailed usage
      ...
 
    note:
-      version: 0.2.0
+      version: 0.2.1
       data_type: ONT, ONT_RNA, or Pacbio
       For more details, please refer to the documentation: https://giraffe-documentation.readthedocs.io/en/latest.
 
@@ -210,7 +210,7 @@ Detailed usage
      --read                table of FASTQ read files
      --unaligned           table of the unaligned SAM/BAM files
      --ref                 reference file
-     --cpu                 number of processes or threads (recommend to set this equal to the number of chromosomes, default:10)
+     --cpu                 number of processes or threads (recommend setting this equal to the number of chromosomes, default:10)
      --binsize             reference will be split into bins of the specified size (default:1000)
 
    subcommands:
@@ -218,7 +218,7 @@ Detailed usage
        estimate            Estimated accuracy, length, and GC content.
        observe             Observed accuracy, mismatch proportion, and homopolymer identification.
        gcbias              Relationship between GC content and sequencing depth.
-       modbin              Average modification proportion at regional level.
+       modbin              Average modification proportion at the regional level.
 
 .. _one-button-pattern-1:
 
@@ -310,7 +310,7 @@ Estimate function
      ...
 
    note:
-      version: 0.2.0
+      version: 0.2.1
       data_type: ONT, ONT_RNA, or Pacbio
       For more details, please refer to the documentation: https://giraffe-documentation.readthedocs.io/en/latest.
 
@@ -326,7 +326,7 @@ Estimate function
 Input table
 ~~~~~~~~~~~
 
-``estimate`` supports the FSATQ and unaligned SAM/BAM files as input.
+``estimate`` supports the input of the FSATQ and unaligned SAM/BAM files.
 
 .. code:: shell
 
@@ -401,7 +401,7 @@ Observe function
      sample_C ONT /home/user/data/S3.fastq
 
    note:
-      version: 0.2.0
+      version: 0.2.1
       data_type: ONT, ONT_RNA, or Pacbio
       For more details, please refer to the documentation: https://giraffe-documentation.readthedocs.io/en/latest.
 
@@ -411,7 +411,7 @@ Observe function
      --aligned     table of the aligned SAM/BAM files
      --unaligned   table of the unaligned SAM/BAM files
      --ref         reference file
-     --cpu         number of processes or threads (recommend to set this equal to the number of chromosomes, default:10)
+     --cpu         number of processes or threads (recommend setting this equal to the number of chromosomes, default:10)
      --plot        results visualization
 
 .. _input-table-2:
@@ -511,9 +511,9 @@ GCbias function
       ...
 
    note:
-      version: 0.2.0
+      version: 0.2.1
       data_type: ONT, ONT_RNA, or Pacbio
-      For more deatails, please refer to the documentation: https://giraffe-documentation.readthedocs.io/en/latest.
+      For more details, please refer to the documentation: https://giraffe-documentation.readthedocs.io/en/latest.
 
    optional arguments:
      -h, --help  show this help message and exit
@@ -521,7 +521,7 @@ GCbias function
      --aligned   table of sorted SAM/BAM files
      --binsize   reference will be split into bins of the specified size (default:1000)
      --plot      results visualization
-     --cpu       number of processes or threads (recommend to set this equal to the number of chromosomes, default:10)
+     --cpu       number of processes or threads (recommend setting this equal to the number of chromosomes, default:10)
 
 .. _input-table-3:
 
@@ -549,7 +549,7 @@ to provide the table to the software.
 
 ``porportion--ref``
 
-​ Using ``--ref`` to provide the reference for read mapping.
+​ Use ``--ref`` to provide the reference for read mapping.
 
 ``--cpu``
 
@@ -565,7 +565,7 @@ sequencing depth. The default value is 1 kb.
 ``--plot``
 
 ​ If specific to the ``--plot``, the **Giraffe** will visualize the
-results including the distribution of bin among the GC content and the
+results including the distribution of bins among the GC content and the
 relationship between normalized depth and GC content.
 
 .. _running-demo-3:
@@ -604,15 +604,15 @@ Modbin function
       ...
 
    note:
-      version: 0.2.0
+      version: 0.2.1
       data_type: ONT, ONT_RNA, or Pacbio
-      For more deatails, please refer to the documentation: https://giraffe-documentation.readthedocs.io/en/latest.
+      For more details, please refer to the documentation: https://giraffe-documentation.readthedocs.io/en/latest.
 
    optional arguments:
      -h, --help  show this help message and exit
      --methyl    table of methylation files
      --region    target region file (Chromosome Start End Region_name)
-     --cpu       number of processes or threads (recommend to set this equal to the number of chromosomes, default:10)
+     --cpu       number of processes or threads (recommend setting this equal to the number of chromosomes, default:10)
      --plot      results visualization
 
 .. _input-table-4:
@@ -624,17 +624,17 @@ Input table
 
 ::
 
-   # the input methylation table
+   # The input methylation table
    sample_A ONT /home/user/data/S1_5mC
    sample_B ONT /home/user/data/S2_5mC
    sample_C ONT /home/user/data/S3_5mC
 
-   # example for methylation file (chromosome start end value)
+   # Example for methylation file (chromosome start end value)
    contig_A 132 133 0.92
    contig_A 255 256 0.27
    contig_A 954 955 0.52
 
-   # example for region (chromosome start end ID)
+   # Example for region (chromosome start end ID)
    chr1    6822    11822   ENSDARG00000102407
    chr1    13716   18716   ENSDARG00000102097
    chr1    20585   25585   ENSDARG00000099319
@@ -786,8 +786,7 @@ The ``Homoploymer_summary.txt`` is the summary of homopolymer accuracy.
    C   0.7611  R941
    G   0.7614  R941
 
-The ``Observed_information.txt`` includes the detailed information for
-each read.
+The ``Observed_information.txt`` includes the detailed information for each read.
 
 ::
 
@@ -804,11 +803,9 @@ GCbias output
 
 The directory of ``3_GC_bias`` includes the results of the ``gcbias``
 function. The ``*svg`` files are the visualization for the distribution
-of bin number across the GC content and the normalized depth across the
-GC content.
+of bin numbers across the GC content and the normalized depth across the GC content.
 
-The ``Bin_distribution.txt`` file includes the number of bin across the
-GC content.
+The ``Bin_distribution.txt`` file includes the number of bins across the GC content.
 
 ::
 
@@ -820,7 +817,7 @@ GC content.
    36      17
 
 The ``*_relationship_raw.txt`` files include the average sequencing
-depth, number of bin across the GC content.
+depth, number of bins across the GC content.
 
 ::
 
@@ -875,7 +872,7 @@ Supplementary
 modBAM processing
 -----------------
 
-Here, we provide the user with command(s) to profile their methylaiton
+Here, we provide the user with command(s) to profile their methylation
 from the modBAM with
 `modkit <https://github.com/nanoporetech/modkit>`__.
 
@@ -916,13 +913,12 @@ The output ``human_homopolymer.txt`` includes the detailed position
 depth renormalization
 ---------------------
 
-Here, we provide a solution for renormalizing the sequencing depth based
-on the given GC content scale due to unsuitable GC scale.
+Here, we provide a solution for renormalizing the sequencing depth based on the given GC content scale due to an unsuitable GC scale.
 
 .. code:: shell
 
-   # Here, we seclected the bins within 30% to 60% GC content to renomalization in our demo data.
-   # the scale of GC content depends on the bin number distribution and it should include most of bins (> 95% or higher)
+   # Here, we selected the bins within 30% to 60% GC content to renormalization in our demo data.
+   # The scale of GC content depends on the bin number distribution and it should include most bins (> 95% or higher)
    renormalization_sequencing_bias -i R941_relationship_raw.txt -l 30 -r 60 -o renorm.txt
 
 We also provide the script to plot the figure with re-normalized data.
@@ -935,7 +931,7 @@ We also provide the script to plot the figure with re-normalized data.
 figure replot
 -------------
 
-Considering that the scale of X/Y axis may not suitable for users to
+Considering that the scale of the X/Y axis may not be suitable for users to
 highlight their data, we provide a subfunction named “giraffe_plot” to
 re-scale.
 
@@ -953,13 +949,13 @@ re-scale.
    # For homopolymer accuracy
    giraffe_plot observe_homo --input Homoploymer_summary.txt --y_min 90 --y_max 100 --y_gap 2 
 
-   # For relationship between normalized depth and GC content!
+   # For the relationship between normalized depth and GC content!
    giraffe_plot gcbias --input Relationship_normalization.txt --x_min 20 --x_max 50 --x_gap 2    
 
-the ``input`` is the results from the **Giraffe**; the ``x_min`` and
-``y_min`` are the smallest cutoff on the X or Y axis; the ``x_max`` and
-``y_max`` are the largest cutoff on the X or Y axis; the ``x_gap`` and
-``y_gap`` are the interval between two values on the X or Y axis.
+the ``input`` is the results from the **Giraffe**; the ``x_min`` or
+``y_min``is the smallest cutoff on the X or Y axis; the ``x_max`` or
+``y_max``is the largest cutoff on the X or Y axis; the ``x_gap`` or
+``y_gap``is the interval between two values on the X or Y axis.
 
 
 .. |image1| image:: ../figures/giraffe_logo.png

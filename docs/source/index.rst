@@ -57,6 +57,7 @@ used during development are listed below.
 -  minimap2 2.17-r941
 -  bedtools 2.30.0
 
+
 Option 1: Installation with conda
 ---------------------------------
 
@@ -67,6 +68,7 @@ Option 1: Installation with conda
 
    # install on a new environment
    conda create -n giraffe -c raymond_liu giraffe_view -y
+
 
 Option 2: Installation with pip
 -------------------------------
@@ -86,6 +88,15 @@ Install the package from Pypi by pip
 .. code:: shell
 
    pip install Giraffe-View
+
+
+Option 3: Installation with source building
+-------------------------------------------
+
+.. code:: shell
+
+   git clone https://github.com/lrslab/Giraffe_View.git
+   cd Giraffe_View && pip install .
 
 Quick usage
 ===========

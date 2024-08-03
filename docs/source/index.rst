@@ -497,7 +497,7 @@ Running demo
    # for aligned human SAM/BAM
    giraffe --aligned aligned.txt --cpu 24 --plot
 
-**Note:** If you are going to run the mapping independently, please
+**Note:** If you are going to run the mapping using minimap2 independently, please
 remove secondary alignments by using ``--secondary=no`` and add the MD
 tag with ``--MD`` during mapping.
 

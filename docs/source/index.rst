@@ -150,8 +150,8 @@ Observe function
    giraffe observe --aligned <aligned SAM/BAM table>
 
 **Note:** If you are going to use aligned SAM/BAM files as input, please
-remove the secondary alignment (**–secondary=no**) and add the MD tag
-(**–MD**) before mapping by adding these two highlighted parameters.
+remove the secondary alignment (**--secondary=no**) and add the MD tag
+(**--MD**) before mapping by adding these two highlighted parameters.
 
 GCbias function
 ---------------
@@ -182,6 +182,23 @@ following commands can help to download them and run the demo.
 .. code:: shell
 
    giraffe_run_demo
+
+The content for demo datasets.
+
+.. code:: shell
+
+   ├── aligned.txt
+   ├── methyl.txt
+   ├── read.txt
+   ├── Methylation
+   │   ├── zf_blood.bed
+   │   ├── zf_kidney.bed
+   │   └── zf_promoter.db
+   └── Read
+       ├── ecoli_chrom.fa
+       ├── ecoli_chrom.fa.fai
+       ├── R1041.fastq
+       └── R941.fastq
 
 The demo datasets include three E. coli datasets: a 4.2 MB reference, 79
 MB R10.4.1 reads, and 121 MB R9.4.1 reads. For the methylation files,
@@ -285,7 +302,7 @@ chromosomes.
 ``--binsize``
 
 ​ This parameter is used for the ``gcbias`` function. The reference will
-be split into bins for calculating GC content and sequencing depth. The
+be split into bins to calculate GC content and sequencing depth. The
 default value is 1 kb.
 
 Running demo

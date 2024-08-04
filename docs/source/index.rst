@@ -303,23 +303,6 @@ as input, and conducts the analysis involving read quality
 finished, an `HTML <https://lxd98.github.io/giraffe.github.io/>`__
 summary will generated with results statics and figures.
 
-Input table
-~~~~~~~~~~~
-
-A table with sample ID, data type, and file path.
-
-.. code:: shell
-
-   # for FASTQ
-   sample_A ONT /home/user/data/S1.fastq
-   sample_B ONT /home/user/data/S2.fastq
-   sample_C ONT /home/user/data/S3.fastq
-
-   # for unaligned SAM/BAM
-   sample_A ONT /home/user/data/S1.bam
-   sample_B ONT /home/user/data/S2.bam
-   sample_C ONT /home/user/data/S3.bam
-
 Parameters
 ~~~~~~~~~~
 
@@ -354,11 +337,21 @@ Running demo
 
 .. code:: shell
 
-   # for human FASTQ reads
+   # for FASTQ reads
    giraffe --read read.txt --ref chromosome.fa --cpu 24 --binszie 5000
 
-   # for human unaligned SAM/BAM
+   # the example for read.txt (sample ID, data type, and data path)
+   R941 ONT Read/R941.fastq
+   R1041 ONT Read/R1041.fastq
+
+.. code:: shell
+
+   # for unaligned SAM/BAM
    giraffe --unaligned unaligned.txt --ref chromosome.fa --cpu 24 --binszie 5000
+
+   # the example for unaligned.txt (sample ID, data type, and data path)   
+   R941 ONT Read/R941.bam
+   R1041 ONT Read/R1041.bam
 
 .. _estimate-function-1:
 

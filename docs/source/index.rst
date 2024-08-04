@@ -200,8 +200,52 @@ The content for demo datasets.
        ├── R1041.fastq
        └── R941.fastq
 
+The ``read.txt`` is the table for FASTQ input (sampleID, data type, and data path).
+
+.. code:: shell
+
+   R941 ONT Read/R941.fastq
+   R1041 ONT Read/R1041.fastq
+
+The ``aligned.txt`` is the table for aligned BAM input (sampleID, data type, and data path).
+
+.. code:: shell
+
+   R941 ONT Giraffe_Results/2_Observed_quality/R941.bam
+   R1041 ONT Giraffe_Results/2_Observed_quality/R1041.bam
+
+The ``methyl.txt`` is the table for methylation files input (sampleID, data type, and data path).
+
+.. code:: shell
+
+   Blood ONT Methylation/zf_blood.bed
+   Kidney ONT Methylation/zf_kidney.bed
+
+The ``zf_blood.bed`` and ``zf_kidney.bed`` files include the position and methylation proportion for the 5mC CpG site.
+
+.. code:: shell
+
+   chr1	81	83	0.889
+   chr1	92	94	0.8
+   chr1	149	151	0.909
+   chr1	234	236	0.625
+   chr1	317	319	0.639
+   chr1	357	359	0.818
+   chr1	374	376	0.68
+   ...
+
+The ``zf_promoter.db`` includes the promoter's position and gene ID.
+
+.. code:: shell
+
+   chr1	6822	11822	ENSDARG00000102407
+   chr1	13716	18716	ENSDARG00000102097
+   chr1	20585	25585	ENSDARG00000099319
+   chr1	22690	27690	ENSDARG00000099640
+   ...
+
 The demo datasets include three E. coli datasets: a 4.2 MB reference, 79
-MB R10.4.1 reads, and 121 MB R9.4.1 reads. For the methylation files,
+MB R10.4.1 reads, and 121 MB R9.4.1 reads. For the 5mC methylation files,
 two files from zebrafish blood (23 MB) and kidney (19 MB) are included.
 This demo takes approximately 7 minutes and 20 seconds to run, with a
 maximum memory usage of 391 MB, based on a workstation with Intel® Xeon®

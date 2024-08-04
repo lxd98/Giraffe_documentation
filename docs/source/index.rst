@@ -962,13 +962,6 @@ Here, we provide a solution for renormalizing the sequencing depth based on the 
    # The scale of GC content depends on the bin number distribution and it should include most bins (> 95% or higher)
    renormalization_sequencing_bias -i R941_relationship_raw.txt -l 30 -r 60 -o renorm.txt
 
-We also provide the script to plot the figure with re-normalized data.
-
-.. code:: shell
-
-   # usage demo and the output is figure named new_figure.pdf
-   replot_sequencing_bias -i renorm.txt -o new_figure
-
 figure replot
 -------------
 

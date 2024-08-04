@@ -386,26 +386,6 @@ Estimate function
      --cpu         number of processes or threads (default:10)
      --plot        results visualization
 
-.. _input-table-1:
-
-Input table
-~~~~~~~~~~~
-
-``estimate`` supports the input of the FSATQ and unaligned SAM/BAM files.
-
-.. code:: shell
-
-   # for FASTQ
-   sample_A ONT /home/user/data/S1.fastq
-   sample_B ONT /home/user/data/S2.fastq
-   sample_C ONT /home/user/data/S3.fastq
-
-   # for unaligned SAM/BAM
-   sample_A ONT /home/user/data/S1.bam
-   sample_B ONT /home/user/data/S2.bam
-   sample_C ONT /home/user/data/S3.bam
-
-.. _parameters-1:
 
 Parameters
 ~~~~~~~~~~
@@ -438,11 +418,21 @@ Running demo
 
 .. code:: shell
 
-   # for human FASTQ reads
+   # for FASTQ reads
    giraffe --read read.txt --cpu 24
 
-   # for human unaligned SAM/BAM
+   # the example for read.txt (sample ID, data type, and data path)   
+   R941 ONT Read/R941.fastq
+   R1041 ONT Read/R1041.fastq
+
+.. code:: shell
+
+   # for unaligned SAM/BAM
    giraffe --unaligned unaligned.txt --cpu 24
+   
+   # the example for unaligned.txt (sample ID, data type, and data path)   
+   R941 ONT Read/R941.bam
+   R1041 ONT Read/R1041.bam
 
 .. _observe-function-1:
 
@@ -478,26 +468,6 @@ Observe function
      --ref         reference file
      --cpu         number of processes or threads (recommend setting this equal to the number of chromosomes, default:10)
      --plot        results visualization
-
-.. _input-table-2:
-
-Input table
-~~~~~~~~~~~
-
-``observe`` supports the FSATQ, unaligned SAM/BAM files, and aligned
-SAM/BAM as input.
-
-.. code:: shell
-
-   # for FASTQ
-   sample_A ONT /home/user/data/S1.fastq
-   sample_B ONT /home/user/data/S2.fastq
-   sample_C ONT /home/user/data/S3.fastq
-
-   # for (un)aligned SAM/BAM
-   sample_A ONT /home/user/data/S1.bam
-   sample_B ONT /home/user/data/S2.bam
-   sample_C ONT /home/user/data/S3.bam
 
 .. _parameters-2:
 
@@ -542,14 +512,30 @@ Running demo
 
 .. code:: shell
 
-   # for human FASTQ reads
+   # for FASTQ reads
    giraffe --read read.txt --ref chromosome.fa --cpu 24 --plot
 
-   # for unaligned human SAM/BAM
+   # the example for read.txt (sample ID, data type, and data path)   
+   R941 ONT Read/R941.fastq
+   R1041 ONT Read/R1041.fastq
+
+.. code:: shell
+
+   # for unaligned SAM/BAM
    giraffe --unaligned unaligned.txt --ref chromosome.fa --cpu 24 --plot
 
-   # for aligned human SAM/BAM
+   # the example for unaligned.txt (sample ID, data type, and data path)   
+   R941 ONT Read/R941.bam
+   R1041 ONT Read/R1041.bam
+
+.. code:: shell
+
+   # for aligned SAM/BAM
    giraffe --aligned aligned.txt --cpu 24 --plot
+
+   # the example for aligned.txt (sample ID, data type, and data path)   
+   R941 ONT Read/R941.bam
+   R1041 ONT Read/R1041.bam
 
 **Note:** If you are going to run the mapping using minimap2 independently, please
 remove secondary alignments by using ``--secondary=no`` and add the MD
@@ -588,20 +574,6 @@ GCbias function
      --plot      results visualization
      --cpu       number of processes or threads (recommend setting this equal to the number of chromosomes, default:10)
 
-.. _input-table-3:
-
-Input table
-~~~~~~~~~~~
-
-``gcbias`` supports the aligned SAM/BAM as input.
-
-.. code:: shell
-
-   # for aligned SAM/BAM
-   sample_A ONT /home/user/data/S1.bam
-   sample_B ONT /home/user/data/S2.bam
-   sample_C ONT /home/user/data/S3.bam
-
 .. _parameters-3:
 
 Parameters
@@ -624,7 +596,7 @@ chromosomes.
 
 ``--binsize``
 
-​ The reference will be split into bins for calculating GC content and
+​ The reference will be split into bins to calculate GC content and
 sequencing depth. The default value is 1 kb.
 
 ``--plot``
@@ -641,6 +613,10 @@ Running demo
 .. code:: shell
 
    giraffe gcbias --ref chromosome.fa --aligned aligned.txt --binsize 5000 --cpu 24 --plot
+
+   # the example for aligned.txt (sample ID, data type, and data path)   
+   R941 ONT Read/R941.bam
+   R1041 ONT Read/R1041.bam
 
 .. _modbin-function-1:
 
@@ -680,32 +656,6 @@ Modbin function
      --cpu       number of processes or threads (recommend setting this equal to the number of chromosomes, default:10)
      --plot      results visualization
 
-.. _input-table-4:
-
-Input table
-~~~~~~~~~~~
-
-``gcbias`` supports the processed methylation files.
-
-::
-
-   # The input methylation table
-   sample_A ONT /home/user/data/S1_5mC
-   sample_B ONT /home/user/data/S2_5mC
-   sample_C ONT /home/user/data/S3_5mC
-
-   # Example for methylation file (chromosome start end value)
-   contig_A 132 133 0.92
-   contig_A 255 256 0.27
-   contig_A 954 955 0.52
-
-   # Example for region (chromosome start end ID)
-   chr1    6822    11822   ENSDARG00000102407
-   chr1    13716   18716   ENSDARG00000102097
-   chr1    20585   25585   ENSDARG00000099319
-   chr1    22690   27690   ENSDARG00000099640
-   chr1    31552   36552   ENSDARG00000104071
-
 .. _parameters-4:
 
 Parameters
@@ -739,6 +689,24 @@ Running demo
 .. code:: shell
 
    giraffe modbin --methyl methylation.txt --region region.txt --cpu 20 --plot 
+
+   # Example for methylation.txt (sample ID, data type, and data path)
+   Blood ONT Methylation/zf_blood.bed
+   Kidney ONT Methylation/zf_kidney.bed
+
+   # Example for methylation file (chromosome, start, end, and methylation proportion)
+   chr1    81  83  0.889
+   chr1    92  94  0.8
+   chr1    149 151 0.909
+   chr1    234 236 0.625
+   chr1    317 319 0.639
+
+   # Example for the region.txt (chromosome, start, end, and region ID)
+   chr1    6822    11822   ENSDARG00000102407
+   chr1    13716   18716   ENSDARG00000102097
+   chr1    20585   25585   ENSDARG00000099319
+   chr1    22690   27690   ENSDARG00000099640
+   chr1    31552   36552   ENSDARG00000104071
 
 Results
 =======

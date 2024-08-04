@@ -401,7 +401,7 @@ Parameters
 ``--read``
 
 ​ If the input files are FASTQ reads, use the ``--read`` to provide the
-table to the software.
+table to the software. The reads compressed in gzip are also supported.
 
 ``--cpu``
 

@@ -122,7 +122,10 @@ One-button pattern
    ...
 
 Here the data_type can be ONT DNA reads (**ONT**), ONT directly
-sequencing reads (**ONT_RNA**), and Pacbio DNA reads (**Pacbio**).
+RNA sequencing reads (**ONT_RNA**), and Pacbio DNA reads (**Pacbio**). 
+The data_type option is used to specify minimap2 parameters during mapping. 
+If your data type does not fit into any of the predefined categories, 
+you can run the mapping process independently and use either "ONT" or "Pacbio" as your data type.
 
 Estimate function
 -----------------

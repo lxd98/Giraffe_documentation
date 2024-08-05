@@ -276,7 +276,7 @@ Detailed usage
      ...
 
    note:
-      version: 0.2.1
+      version: 0.2.2
       data_type: ONT, ONT_RNA, or Pacbio
       For more details, please refer to the documentation: https://giraffe-documentation.readthedocs.io/en/latest.
 
@@ -378,7 +378,7 @@ Estimate function
      ...
 
    note:
-      version: 0.2.1
+      version: 0.2.2
       data_type: ONT, ONT_RNA, or Pacbio
       For more details, please refer to the documentation: https://giraffe-documentation.readthedocs.io/en/latest.
 
@@ -459,7 +459,7 @@ Observe function
      sample_C ONT /home/user/data/S3.fastq
 
    note:
-      version: 0.2.1
+      version: 0.2.2
       data_type: ONT, ONT_RNA, or Pacbio
       For more details, please refer to the documentation: https://giraffe-documentation.readthedocs.io/en/latest.
 
@@ -565,7 +565,7 @@ GCbias function
       ...
 
    note:
-      version: 0.2.1
+      version: 0.2.2
       data_type: ONT, ONT_RNA, or Pacbio
       For more details, please refer to the documentation: https://giraffe-documentation.readthedocs.io/en/latest.
 
@@ -648,7 +648,7 @@ Modbin function
       ...
 
    note:
-      version: 0.2.1
+      version: 0.2.2
       data_type: ONT, ONT_RNA, or Pacbio
       For more details, please refer to the documentation: https://giraffe-documentation.readthedocs.io/en/latest.
 

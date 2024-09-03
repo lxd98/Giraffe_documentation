@@ -923,7 +923,7 @@ from the modBAM with
 
    # get the input methylation file to Giraffe
    # $1, $2, $3, and $4 present chromosome, start, end, and methylation proportion, respectively.
-   awk '{$1 "\t" $2 "\t" $3 "\t" $11}' human_5hmC.bed > human_5hmC_giraffe.bed
+   awk '{print $1 "\t" $2 "\t" $3 "\t" $11}' human_5hmC.bed > human_5hmC_giraffe.bed
 
 
 homopolymer statics

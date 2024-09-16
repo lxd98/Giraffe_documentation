@@ -67,7 +67,7 @@ Option 1: Installation with conda
    conda install -c raymond_liu giraffe_view -y
 
    # install on a new environment
-   conda create -n giraffe -c raymond_liu giraffe_view -y
+   conda create -n giraffe -c raymond_liu giraffe_view==0.2.3 -y
 
 
 Option 2: Installation with pip
